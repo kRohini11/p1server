@@ -33,9 +33,7 @@ async function regStudentDAO(data) {
         const collection = db.collection("students");
         // perform operation 
         const result = await collection.insertOne(data);
-
         //send the response
-
         return result
     }
     catch (e) {
@@ -51,18 +49,16 @@ async function loginDAO(data) {
         const db = await getDB();
         const collection = db.collection("students");
         return await collection.find(data).toArray();
-
     }
     catch (e) {
         console.error(e)
     }
     finally {
-
     }
 }
 
 async function getStdByIdDAO(id) {
-    console.log(id)
+    // console.log(id)
     try {
         const db = await getDB();
         const collection = db.collection("students")

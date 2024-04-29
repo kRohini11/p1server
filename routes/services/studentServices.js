@@ -3,7 +3,7 @@ const { getStudentDAO, regStudentDAO, loginDAO, getStdByIdDAO, updateStudentDAO,
 const jwt = require('jsonwebtoken')
 
 async function getStudentService() {
-    console.log("getStudentService");
+    // console.log("getStudentService");
     const response = await getStudentDAO();
     return response.map((obj) => {
         delete obj.pwd;
@@ -22,7 +22,7 @@ async function regStudentService(req) {
 async function loginService(req) {
     const user = req.body.data;
     const response = await loginDAO(user);
-    console.log(response);
+    // console.log(response);
     if (response.length > 0) {
         const token = jwt.sign(user, "myToken");
         delete response[0].pwd;

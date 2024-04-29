@@ -26,7 +26,7 @@ router.get('/get-std',
 
     validateToken,
     async function (req, res, next) {
-        console.log("studentController")
+        // console.log("studentController")
         const result = await getStudentService(req);
         res.send(result)
     });
